@@ -4,15 +4,60 @@ function computerPlay() {
     let result = Math.random() * 10;
     switch (true) {
         case result >= 6.66:
-            console.log("Rock");
+            return "Rock";
             break;
         case result <= 3.33:
-            console.log("Paper");
+            return "Paper";
             break;
         default:
-            console.log("Scissors");
+            return "Scissors";
     }
 }
-computerPlay()
+
+function playRound (playerSelection, computerSelection) {
+    let computerSelection = computerplay();
+    let playerSelection = prompt("Make your selection! Rock, paper or scissors!");
+    let playerLower = playerSelection.toLowerCase();
+  
+
+    switch (true) {
+        case playerLower == "rock" && computerSelection == "Rock":
+            return "Draw! Both players chose Rock";
+            break;
+        case playerLower == "rock" && computerSelection == "Scissors":
+            return "You win! Rock beats Scissors";
+            break;
+        case playerLower == "rock" && computerSelection == "Paper":
+            return "You lose! Paper beats Rock";
+            break;
+        case playerLower == "scissors" && computerSelection == "Rock":
+            return "You lose! Rock beats Scissors";
+            break;
+        case playerLower == "scissors" && computerSelection == "Scissors":
+            return "Draw! Both players chose Scissors";
+            break;
+        case playerLower == "scissors" && computerSelection == "Paper":
+            return "You win! Scissors beats Paper!";
+            break;
+        case playerLower == "paper" && computerSelection == "Rock":
+            return "You win! Paper beats Rock";
+            break;
+        case playerLower == "paper" && computerSelection == "Scissors":
+            return "You lose! Scissors beats Paper";
+            break;
+        case playerLower == "paper" && computerSelection == "Paper":
+            return "Draw! Both players chose Paper";
+            break;
+        default:
+            return "Invalid selection";
+    }
+}
+
+function game()
+        for (i=0; i <5; i++) {
+            console.log(playRound);
+        }
+
     </script>
+
 </html>
