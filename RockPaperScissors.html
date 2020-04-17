@@ -1,15 +1,16 @@
 <html>
     <script>
 function computerPlay() {
-    let result = math.random() * 10;
-    if (result >= 6.66) {
-        return console.log("Rock");
-        }
-    else if (result <= 3.33) {
-        return console.log("Paper");
-    }
-    else {
-        return console.log("Scissors");
+    let result = Math.random() * 10;
+    switch (true) {
+        case result >= 6.66:
+            console.log("Rock");
+            break;
+        case result <= 3.33:
+            console.log("Paper");
+            break;
+        default:
+            console.log("Scissors");
     }
 }
 computerPlay()
