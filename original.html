@@ -1,0 +1,82 @@
+<html>
+    <script>
+let playerScore = 0
+let computerScore = 0
+
+function computerPlay() {
+    let result = Math.random() * 10;
+    if (result >= 6.66) {
+        return "Rock";
+    }
+    else if (result <= 3.33) {
+        return "Paper";
+    }
+        else {return "Scissors";
+        }
+    
+}
+
+function playRound () {
+    let computerSelection = computerPlay();
+    let playerSelection = prompt("Make your selection! Rock, Paper or Scissors!");
+    let playerLower = playerSelection.toLowerCase();
+
+    if (playerLower === "rock" && computerSelection === "Rock") {
+          return "Draw! Both players chose Rock";
+        }
+        else if (playerLower === "rock" && computerSelection === "Scissors") {
+            playerScore++;                       
+            return "You win! Rock beats Scissors";
+            }
+        else if (playerLower === "rock" && computerSelection === "Paper") {
+            computerScore++;          
+            return "You lose! Paper beats Rock";
+            }
+        else if (playerLower === "scissors" && computerSelection === "Rock") {
+            computerScore++;          
+            return "You lose! Rock beats Scissors";
+            }
+        else if (playerLower === "scissors" && computerSelection === "Scissors") {
+            return "Draw! Both players chose Scissors";
+            }
+        else if (playerLower === "scissors" && computerSelection === "Paper") {
+            playerScore++;           
+            return "You win! Scissors beats Paper!";
+            }
+        else if (playerLower === "paper" && computerSelection === "Rock") {
+            playerScore++;          
+            return "You win! Paper beats Rock";
+            }
+        else if (playerLower === "paper" && computerSelection === "Scissors") {
+            computerScore++;            
+            return "You lose! Scissors beats Paper";
+            }
+        else if (playerLower === "paper" && computerSelection === "Paper") {
+            return "Draw! Both players chose Paper";
+            }
+        else {
+            return "Invalid selection";
+    }
+   
+}
+function game() {
+    for (i = 0; i < 5; i++) {
+            console.log(playRound());
+            console.log(playerScore);
+            console.log(computerScore);
+       
+        }
+if (computerScore < playerScore) {
+  console.log("Congratulations! You won the game");
+  }
+  else if (computerScore > playerScore) {
+    console.log("You lost :( Better luck next time");
+  }
+  else console.log("Even Steven's! It's a draw!")
+        
+         
+}
+game();
+    </script>
+
+</html>

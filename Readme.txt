@@ -1,1 +1,1 @@
-Initial rockpaperscissors 
+RockPaperScissors Project as part of the Odin Project web development 101 course
