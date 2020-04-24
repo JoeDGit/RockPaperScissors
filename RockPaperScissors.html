@@ -15,9 +15,10 @@
 
 
 </div>
-<div id ="roundResult">
-   
-    
+<div id ="roundResult">     
+</div>
+<div id ="gameResult">
+
 </div>
 
     <script>
@@ -107,11 +108,31 @@ function playRound (playerSelection) {
         else {
             rresult.textContent= "Invalid selection";
     }
+
+    if (playerScore === 5) {
+        gresult.textContent = "Congratualtions, you won the game!"
+        playerScore = 0;
+        document.getElementById("pScore").innerHTML = playerScore;
+        computerScore = 0;
+        document.getElementById("cScore").innerHTML = computerScore;
+
+        } else if (computerScore === 5) {
+            gresult.textContent = "You lost! Better luck next time";
+            playerScore = 0;
+            document.getElementById("pScore").innerHTML = playerScore;
+            computerScore = 0;
+            document.getElementById("cScore").innerHTML = computerScore;
+        } else {
+            gresult.textContent = ""
+        }
+        
+    }
     
-}
+
 document.getElementById("cScore").innerHTML = computerScore;
 document.getElementById("pScore").innerHTML = playerScore;
 const rresult = document.querySelector('#roundResult');
+const gresult = document.querySelector('#gameResult')
 
 
 
