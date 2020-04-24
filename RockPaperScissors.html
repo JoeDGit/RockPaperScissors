@@ -66,52 +66,52 @@ function playRound (playerSelection) {
     let computerSelection = computerPlay();
 
     if (playerSelection === "rock" && computerSelection === "Rock") {
-          return "Draw! Both players chose Rock";
+          rresult.textContent= "Draw! Both players chose Rock";
         }
         else if (playerSelection === "rock" && computerSelection === "Scissors") {
             playerScore++; 
             document.getElementById("pScore").innerHTML = playerScore;                      
-            return "You win! Rock beats Scissors";
+            rresult.textContent= "You win! Rock beats Scissors";
             }
         else if (playerSelection === "rock" && computerSelection === "Paper") {
             computerScore++;
             document.getElementById("cScore").innerHTML = computerScore;          
-            return "You lose! Paper beats Rock";
+            rresult.textContent= "You lose! Paper beats Rock";
             }
         else if (playerSelection === "scissors" && computerSelection === "Rock") {
             computerScore++;
             document.getElementById("cScore").innerHTML = computerScore;          
-            return "You lose! Rock beats Scissors";
+            rresult.textContent= "You lose! Rock beats Scissors";
             }
         else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-            return "Draw! Both players chose Scissors";
+            rresult.textContent= "Draw! Both players chose Scissors";
             }
         else if (playerSelection === "scissors" && computerSelection === "Paper") {
             playerScore++;
             document.getElementById("pScore").innerHTML = playerScore;           
-            return "You win! Scissors beats Paper!";
+            rresult.textContent= "You win! Scissors beats Paper!";
             }
         else if (playerSelection === "paper" && computerSelection === "Rock") {
             playerScore++;
             document.getElementById("pScore").innerHTML = playerScore;          
-            return "You win! Paper beats Rock";
+            rresult.textContent= "You win! Paper beats Rock";
             }
         else if (playerSelection === "paper" && computerSelection === "Scissors") {
             computerScore++;
             document.getElementById("cScore").innerHTML = computerScore;            
-            return "You lose! Scissors beats Paper";
+            rresult.textContent= "You lose! Scissors beats Paper";
             }
         else if (playerSelection === "paper" && computerSelection === "Paper") {
-            return "Draw! Both players chose Paper";
+            rresult.textContent= "Draw! Both players chose Paper";
             }
         else {
-            return "Invalid selection";
+            rresult.textContent= "Invalid selection";
     }
     
 }
 document.getElementById("cScore").innerHTML = computerScore;
 document.getElementById("pScore").innerHTML = playerScore;
-
+const rresult = document.querySelector('#roundResult');
 
 
 
